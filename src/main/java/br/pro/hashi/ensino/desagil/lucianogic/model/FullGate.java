@@ -8,7 +8,7 @@ public class FullGate extends Gate {
 	private OrGate orGate;
 
 	public FullGate() {
-		super(2, 1);
+		super(3, 2);
 
 		name = "FULLADDER";
 
@@ -26,9 +26,19 @@ public class FullGate extends Gate {
 
 	@Override
 	public boolean doRead(int index) {
-		return xorRight.read();
+		if(index==0){			
+			return xorRight.read();
+			}
 
-	}
+		else if(index==1){
+			
+			return orGate.read();
+			}
+		else {
+			throw new IndexOutOfBoundsException();
+			}
+		}
+	
 
 	@Override
 	protected void doConnect(Emitter emitter, int index) {

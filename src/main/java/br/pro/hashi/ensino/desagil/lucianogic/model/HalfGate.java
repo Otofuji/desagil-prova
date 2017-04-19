@@ -5,7 +5,7 @@ public class HalfGate extends Gate {
 	private AndGate andGate;
 
 	public HalfGate() {
-		super(2, 1);
+		super(2, 3);
 
 		name = "HALFADDER";
 
@@ -16,9 +16,19 @@ public class HalfGate extends Gate {
 
 	@Override
 	public boolean doRead(int index) {
-		return xorGate.read();
+		if(index==0){			
+			return xorGate.read();
+			}
 
-	}
+		else if(index==1){
+			
+			return andGate.read();
+			}
+		else {
+			throw new IndexOutOfBoundsException();
+			}
+		}
+		 
 
 	@Override
 	protected void doConnect(Emitter emitter, int index) {
