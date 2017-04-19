@@ -76,7 +76,7 @@ public class GateView extends FixedPanel implements ItemListener {
 		
 		if(outSize > 1) {
 			add(carry, 184, 100, 20, 20);
-			carry.setSelected(gate.read(0));
+			carry.setSelected(gate.read());
 		}
 	}
 
