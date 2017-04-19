@@ -10,7 +10,7 @@ public class FullGate extends Gate {
 	public FullGate() {
 		super(3, 2);
 
-		name = "FULLADDER";
+		name = "FULL";
 
 		xorLeft = new XorGate();
 		xorRight = new XorGate();
@@ -42,10 +42,15 @@ public class FullGate extends Gate {
 
 	@Override
 	protected void doConnect(Emitter emitter, int index) {
-		xorLeft.connect(emitter, index);
-		andDown.connect(emitter, index);
-		xorRight.connect(emitter, 2);
-		andUp.connect(emitter, 2);
-		
+		switch(index) {
+		case 0:
+			xorLeft.connect(emitter, index);
+			andDown.connect(emitter, index);
+			break;
+		case 1:
+			xorRight.connect(emitter, 2);
+			andUp.connect(emitter, 2);
+			break;
+		}
 	}
 }
