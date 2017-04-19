@@ -7,7 +7,7 @@ public class HalfGate extends Gate {
 	public HalfGate() {
 		super(2, 1);
 
-		name = "HalfAdder";
+		name = "HALFADDER";
 
 		xorGate = new XorGate();
 		andGate = new AndGate();

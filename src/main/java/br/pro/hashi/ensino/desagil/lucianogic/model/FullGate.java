@@ -10,7 +10,7 @@ public class FullGate extends Gate {
 	public FullGate() {
 		super(2, 1);
 
-		name = "FullAdder";
+		name = "FULLADDER";
 
 		xorLeft = new XorGate();
 		xorRight = new XorGate();
