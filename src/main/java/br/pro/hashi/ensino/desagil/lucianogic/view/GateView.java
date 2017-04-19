@@ -55,6 +55,8 @@ public class GateView extends FixedPanel implements ItemListener {
 
 		outBox = new JCheckBox();
 		carry = new JCheckBox();
+		outBox.setEnabled(false);
+		carry.setEnabled(false);
 		
 		if(inSize == 1) {
 			add(inBoxes[0], 0, 60, 20, 20);			
@@ -74,7 +76,7 @@ public class GateView extends FixedPanel implements ItemListener {
 		
 		if(outSize > 1) {
 			add(carry, 184, 100, 20, 20);
-			carry.setSelected(gate.read());
+			carry.setSelected(gate.read(0));
 		}
 	}
 
