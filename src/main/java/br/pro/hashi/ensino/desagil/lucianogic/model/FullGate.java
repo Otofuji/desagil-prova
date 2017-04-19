@@ -44,12 +44,16 @@ public class FullGate extends Gate {
 	protected void doConnect(Emitter emitter, int index) {
 		switch(index) {
 		case 0:
-			xorLeft.connect(emitter, index);
-			andDown.connect(emitter, index);
+			xorLeft.connect(emitter, 0);
+			andDown.connect(emitter, 0);
 			break;
 		case 1:
-			xorRight.connect(emitter, 2);
-			andUp.connect(emitter, 2);
+			xorLeft.connect(emitter, 1);
+			andDown.connect(emitter, 1);
+			break;
+		case 2:
+			xorRight.connect(emitter, 1);
+			andUp.connect(emitter, 1);
 			break;
 		}
 	}
